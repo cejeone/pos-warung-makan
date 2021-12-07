@@ -1,0 +1,19 @@
+.menu-pengaturan .pengaturan {
+    background: #ffff;
+    border: none;
+    border-radius: 20px;
+    text-decoration: none;
+    color: black;
+    padding: 40px 20px 20px 20px;
+    text-align: center;
+
+    i {
+        font-size: 40pt;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    &:hover {
+        background: #aef261;
+    }
+}

@@ -1,0 +1,100 @@
+//form-penjualan
+
+.tampil-bayar {
+    font-size: 20px;
+    text-align: center;
+    background-color: #aef261;
+    padding: 10px;
+    font-weight: 700;
+    border-radius: 10px;
+}
+
+.tampil-terbilang {
+    padding: 10px;
+    background: #f0f0f0;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.table-penjualan tbody tr:last-child {
+    display: none;
+}
+
+@media(max-width: 768px) {
+    .tampil-bayar {
+        font-size: 20px;
+        padding-top: 5px;
+        border-radius: 10px;
+    }
+}
+
+.table.table-bordered.table-penjualan {
+    text-align: center;
+}
+
+.form-penjualan {
+    margin-top: 10px;
+}
+
+.form-group.row {
+    margin-top: 10px;
+
+    .form-control {
+        border-radius: 10px;
+    }
+}
+
+.input-group .form-control {
+    border-radius: 10px;
+}
+
+.btn.btn-cari {
+    background-color: #aef261;
+}
+
+.btn.btn-member {
+    background-color: #aef261;
+}
+
+.btn.btn-simpan {
+    background-color: #aef261;
+    border-radius: 10px;
+}
+
+.btn.btn-batal {
+    background-color: orange;
+    border-radius: 10px;
+}
+
+.btn.btn-reset {
+    background-color: orange;
+    border-radius: 10px;
+}
+
+.btn.btn-update {
+    background-color: cornflowerblue;
+    border-radius: 10px;
+}
+
+.btn.btn-delete {
+    background-color: red;
+    border-radius: 10px;
+}
+
+.fas.fa-crud {
+    color: white;
+}
+
+.btn.btn-tambah {
+    background-color: green;
+    border-radius: 10px;
+    
+}
+
+.box-footer {
+    align-content: flex-end;
+}
+
+.btn-group {
+    margin-bottom: 8px;
+}

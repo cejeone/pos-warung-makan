@@ -1,0 +1,26 @@
+// Import Bootstrap Library
+@import "../vendor/bootstrap/scss/bootstrap.scss";
+
+@import "fonts";
+@import "global";
+@import "ulti";
+
+@import "components/sidebar";
+@import "components/search";
+@import "components/dashboard";
+@import "components/breadcumb";
+@import "components/header";
+
+//form
+@import "components/form";
+@import "components/modal";
+
+
+//menu order
+@import "components/categories";
+@import "components/menu";
+
+//checkout
+@import "components/checkout";
+
+@import "pages/pengaturan";

@@ -1,0 +1,33 @@
+body {
+    font-family: "poppins", sans-serif;
+    background: #f5f5f5;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+main.main-wrapper {
+    margin-left: 270px;
+    position: relative;
+    padding: 50px 0;
+}
+
+main.main-wrapper .container {
+    min-width: calc(1024px - 262px);
+    max-width: 100%;
+    padding: 0 50px;
+    margin: 0;
+}
+
+
+@mixin make-container($gutter: $container-padding-x) {
+    width: 100%;
+    padding-right: var(--#{$variable-prefix}gutter-x, #{$gutter});
+    padding-left: var(--#{$variable-prefix}gutter-x, #{$gutter});
+    margin-right: auto;
+    margin-left: auto;
+}

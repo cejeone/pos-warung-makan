@@ -1,0 +1,31 @@
+.component-categories {
+  background: white;
+  border-radius: 20px;
+  padding: 1px 1px 1px 1px;
+  margin-bottom: 20px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  z-index: 1;
+}
+
+.component-categories:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  text-decoration: none;
+  background-color: #aef261;
+}
+
+.component-categories.active {
+  text-decoration: none;
+  background-color: #aef261;
+}
+
+.component-categories .categories-text {
+  font-weight: normal;
+  font-size: 18px;
+  text-align: center;
+  color: #0c0d36;
+  margin-top: 12px;
+  text-decoration: none;
+}
