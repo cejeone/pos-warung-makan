@@ -16,7 +16,7 @@ class SettingTableSeeder extends Seeder
     {
         DB::table('setting')->insert([
             'id_setting' => 1,
-            'nama_perusahaan' => 'Warung pecel lele',
+            'nama_perusahaan' => 'Warung Makan Lamongan',
             'alamat' => 'Jl. rawasari Timur',
             'telepon' => '082122332706',
             'tipe_nota' => 1, // kecil

@@ -42,7 +42,8 @@
         <div class="col-lg-12">
             <div class="bg-menu mt-5">
                 <div class="pengaturan d-block">
-                    <h5 class="box-title text-center">Grafik Pendapatan</h5>
+                    <h5 class="box-title text-center">Grafik Pendapatan {{ tanggal_indonesia($tanggal_akhir, false) }}
+                    </h5>
                     <div class="box-body">
                         <div class="row">
                             <div class="col-lg-12">

@@ -50,10 +50,7 @@
                         <i class="fas fa-cash-register"></i>
                         <p><a href="{{ route('transaksi.baru') }}" class="item-sidebar">Order Baru</a></p>
                     </div>
-                    <div class="item active transaksi">
-                        <i class="fas fa-clipboard-check"></i>
-                        <p><a href="{{ route('penjualan.index') }}" class="item-sidebar">Transaksi</a></p>
-                    </div>
+
 
                 @endif
 

@@ -17,22 +17,22 @@
             <div class="col-lg-12">
                 <div class="box">
                     <div class="box-body">
-                        <div class="alert alert-success alert-dismissible">
-                            <i class="fa fa-check icon"></i>
-                            Transaksi telah selesai.
+                        <div class="alert alert-success">
+                            <i class="fas fa-check-square"></i>
+                            Transaksi berhasil.
                         </div>
                     </div>
                     <div class="box-footer">
                         @if ($setting->tipe_nota == 1)
-                            <button class="btn btn-warning btn-flat"
+                            <button class="btn btn-reset"
                                 onclick="notaKecil('{{ route('transaksi.nota_kecil') }}', 'Nota Kecil')">Cetak Ulang
                                 Nota</button>
                         @else
-                            <button class="btn btn-warning btn-flat"
+                            <button class="btn btn-reset"
                                 onclick="notaBesar('{{ route('transaksi.nota_besar') }}', 'Nota PDF')">Cetak Ulang
                                 Nota</button>
                         @endif
-                        <a href="{{ route('transaksi.baru') }}" class="btn btn-primary btn-flat">Transaksi Baru</a>
+                        <a href="{{ route('transaksi.baru') }}" class="btn btn-simpan">Transaksi Baru</a>
                     </div>
                 </div>
             </div>

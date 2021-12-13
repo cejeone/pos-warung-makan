@@ -58,17 +58,6 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="path_kartu_member" class="col-lg-2 control-label">Kartu Member</label>
-                                <div class="col-lg-4">
-                                    <input type="file" name="path_kartu_member" class="form-control"
-                                        id="path_kartu_member"
-                                        onchange="preview('.tampil-kartu-member', this.files[0], 300)">
-                                    <span class="help-block with-errors"></span>
-                                    <br>
-                                    <div class="tampil-kartu-member"></div>
-                                </div>
-                            </div>
-                            <div class="form-group row">
                                 <label for="tipe_nota" class="col-lg-2 control-label">Tipe Nota</label>
                                 <div class="col-lg-2">
                                     <select name="tipe_nota" class="form-control" id="tipe_nota" required>
@@ -156,8 +145,6 @@
                     $('.logo-lg').text(response.nama_perusahaan);
 
                     $('.tampil-logo').html(`<img src="{{ url('/') }}${response.path_logo}" width="200">`);
-                    $('.tampil-kartu-member').html(
-                        `<img src="{{ url('/') }}${response.path_kartu_member}" width="300">`);
                     $('[rel=icon]').attr('href', `{{ url('/') }}/${response.path_logo}`);
                 })
                 .fail(errors => {
