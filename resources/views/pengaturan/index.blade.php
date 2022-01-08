@@ -20,12 +20,6 @@
                 </a>
             </div>
             <div class="col-3">
-                <a href="{{ route('member.index') }}" class="pengaturan d-block">
-                    <i class="fas fa-users"></i>
-                    <p>Member</p>
-                </a>
-            </div>
-            <div class="col-3">
                 <a href="{{ route('setting.index') }}" class="pengaturan d-block">
                     <i class="fas fa-cog"></i>
                     <p>Edit profil</p>

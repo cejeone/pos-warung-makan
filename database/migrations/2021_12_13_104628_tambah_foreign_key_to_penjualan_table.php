@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class EditIdMemberToPenjualanTable extends Migration
+class TambahForeignKeyToPenjualanTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,9 +14,12 @@ class EditIdMemberToPenjualanTable extends Migration
     public function up()
     {
         Schema::table('penjualan', function (Blueprint $table) {
-            $table->integer('id_member')
-                  ->nullable()
-                  ->change();
+            $table->unsignedBigInteger('id_user')->change();
+            $table->foreign('id_user')
+                  ->references('id')
+                  ->on('users')
+                  ->onUpdate('restrict')
+                  ->onDelete('restrict');
         });
     }
 
@@ -28,8 +31,8 @@ class EditIdMemberToPenjualanTable extends Migration
     public function down()
     {
         Schema::table('penjualan', function (Blueprint $table) {
-            $table->integer('id_member')
-                  ->change();
+            $table->integer('id_user')->change();
+            $table->dropForeign('penjualan_id_user_foreign');
         });
     }
 }

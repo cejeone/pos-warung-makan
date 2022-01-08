@@ -3,12 +3,12 @@
 @section('login')
     <div class="menu-login">
         <div class="bg-menu">
+            {{-- <div class="login-logo">
+                <a href="{{ url('/') }}">
+                    <img src="{{ url($setting->path_logo) }}" alt="logo.png" width="100">
+                </a>
+            </div> --}}
             <div class="text-center">
-                {{-- <div class="login-logo">
-                    <a href="{{ url('/') }}">
-                        <img src="{{ url($setting->path_logo) }}" alt="logo.png" width="100">
-                    </a>
-                </div> --}}
                 <form action="{{ route('login') }}" method="post" class="form-login">
                     <h2>Masuk</h2>
                     @csrf

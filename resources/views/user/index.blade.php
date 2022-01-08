@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    Daftar User
+    Pengaturan | Pengguna
 @endsection
 
 @section('breadcrumb')
@@ -72,7 +72,7 @@
                         sortable: false
                     },
                     {
-                        data: 'name'
+                        data: 'nama'
                     },
                     {
                         data: 'email'

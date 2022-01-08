@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    Transaksi | Daftar Pengeluaran
+    Transaksi | Pengeluaran
 @endsection
 
 @section('breadcrumb')

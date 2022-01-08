@@ -5,7 +5,7 @@
             <div class="foto-user">
                 <img src="{{ url(auth()->user()->foto ?? '') }}" class="avatar" alt="User Image">
                 <div class="profil">
-                    <p>{{ auth()->user()->name }} <a href="#" class="btn btn-default btn-flat"
+                    <p>{{ auth()->user()->nama }} <a href="#" class="btn btn-default btn-flat"
                             onclick="$('#logout-form').submit()"><i class="fas fa-power-off"></i></a></p>
                     <form action="{{ route('logout') }}" method="post" id="logout-form" style="display: none;">
                         @csrf
@@ -21,7 +21,7 @@
                 @if (auth()->user()->level == 1)
                     <div class="item active menuorder">
                         <i class="fas fa-cash-register"></i>
-                        <p><a href="{{ route('transaksi.index') }}" class="item-sidebar">Menu Order</a></p>
+                        <p><a href="{{ route('transaksi.baru') }}" class="item-sidebar">Menu Order</a></p>
                     </div>
                     <div class="item active kategori">
                         <i class="fas fa-weight-hanging"></i>
@@ -49,6 +49,10 @@
                     <div class="item active menuorder">
                         <i class="fas fa-cash-register"></i>
                         <p><a href="{{ route('transaksi.baru') }}" class="item-sidebar">Order Baru</a></p>
+                    </div>
+                    <div class="item active transaksi">
+                        <i class="fas fa-clipboard-check"></i>
+                        <p><a href="{{ route('penjualan.index') }}" class="item-sidebar">Transaksi</a></p>
                     </div>
 
 

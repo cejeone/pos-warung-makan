@@ -17,7 +17,6 @@ class BuatProdukTable extends Migration
             $table->increments('id_produk');
             $table->integer('id_kategori');
             $table->string('nama_produk')->unique();
-            $table->tinyInteger('diskon')->default(0);
             $table->integer('harga_jual');
             $table->integer('stok');
             $table->timestamps();

@@ -47,10 +47,6 @@
             <td>Tanggal</td>
             <td>: {{ tanggal_indonesia(date('Y-m-d')) }}</td>
         </tr>
-        <tr>
-            <td>Kode Member</td>
-            <td>: {{ $penjualan->member->kode_member ?? '' }}</td>
-        </tr>
     </table>
 
     <table class="data" width="100%">
@@ -61,7 +57,6 @@
                 <th>Nama</th>
                 <th>Harga Satuan</th>
                 <th>Jumlah</th>
-                <th>Diskon</th>
                 <th>Subtotal</th>
             </tr>
         </thead>
@@ -84,10 +79,6 @@
                 <td class="text-right"><b>{{ format_uang($penjualan->total_harga) }}</b></td>
             </tr>
             <tr>
-                <td colspan="6" class="text-right"><b>Diskon</b></td>
-                <td class="text-right"><b>{{ format_uang($penjualan->diskon) }}</b></td>
-            </tr>
-            <tr>
                 <td colspan="6" class="text-right"><b>Total Bayar</b></td>
                 <td class="text-right"><b>{{ format_uang($penjualan->bayar) }}</b></td>
             </tr>
@@ -104,7 +95,7 @@
 
     <table width="100%">
         <tr>
-            <td><b>Terimakasih telah berbelanja dan sampai jumpa</b></td>
+            <td><b>Terima kasih, jangan lupa mampir lagi.</b></td>
             <td class="text-center">
                 Kasir
                 <br>

@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Member;
 use App\Models\Penjualan;
 use App\Models\PenjualanDetail;
 use App\Models\Produk;
@@ -14,15 +13,12 @@ class PenjualanDetailController extends Controller
     public function index()
     {
         $produk = Produk::orderBy('nama_produk')->get();
-        $member = Member::orderBy('nama')->get();
-        $diskon = Setting::first()->diskon ?? 0;
 
         // Cek apakah ada transaksi yang sedang berjalan
         if ($id_penjualan = session('id_penjualan')) {
             $penjualan = Penjualan::find($id_penjualan);
-            $memberSelected = $penjualan->member ?? new Member();
 
-            return view('penjualan_detail.index', compact('produk', 'member', 'diskon', 'id_penjualan', 'penjualan', 'memberSelected'));
+            return view('penjualan_detail.index', compact('produk', 'id_penjualan', 'penjualan'));
         } else {
             if (auth()->user()->level == 1) {
                 return redirect()->route('transaksi.baru');
@@ -48,7 +44,6 @@ class PenjualanDetailController extends Controller
             $row['nama_produk'] = $item->produk['nama_produk'];
             $row['harga_jual']  = 'Rp. '. format_uang($item->harga_jual);
             $row['jumlah']      = '<input type="number" class="form-control input-sm quantity" data-id="'. $item->id_penjualan_detail .'" value="'. $item->jumlah .'">';
-            $row['diskon']      = $item->diskon . '%';
             $row['subtotal']    = 'Rp. '. format_uang($item->subtotal);
             $row['aksi']        = '<div class="btn-group">
                                     <button onclick="deleteData(`'. route('transaksi.destroy', $item->id_penjualan_detail) .'`)" class="btn btn-delete"><i class="fas fa-crud fa-trash"></i></button>
@@ -65,7 +60,6 @@ class PenjualanDetailController extends Controller
             'nama_produk' => '',
             'harga_jual'  => '',
             'jumlah'      => '',
-            'diskon'      => '',
             'subtotal'    => '',
             'aksi'        => '',
         ];
@@ -89,7 +83,6 @@ class PenjualanDetailController extends Controller
         $detail->id_produk = $produk->id_produk;
         $detail->harga_jual = $produk->harga_jual;
         $detail->jumlah = 1;
-        $detail->diskon = 0;
         $detail->subtotal = $produk->harga_jual;
         $detail->save();
 

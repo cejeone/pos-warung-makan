@@ -43,7 +43,6 @@
                                 <th>Nama</th>
                                 <th>Harga</th>
                                 <th width="15%">Jumlah</th>
-                                <th>Diskon</th>
                                 <th>Subtotal</th>
                                 <th width="15%"><i class="fa fa-cog"></i></th>
                             </thead>
@@ -61,33 +60,11 @@
                                     <input type="hidden" name="total" id="total">
                                     <input type="hidden" name="total_item" id="total_item">
                                     <input type="hidden" name="bayar" id="bayar">
-                                    <input type="hidden" name="id_member" id="id_member"
-                                        value="{{ $memberSelected->id_member }}">
 
                                     <div class="form-group row">
                                         <label for="totalrp" class="col-lg-4 control-label">Total</label>
                                         <div class="col-lg-8">
                                             <input type="text" id="totalrp" class="form-control" readonly>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="kode_member" class="col-lg-4 control-label">Member</label>
-                                        <div class="col-lg-8">
-                                            <div class="input-group">
-                                                <input type="text" class="form-control" id="kode_member"
-                                                    value="{{ $memberSelected->kode_member }}">
-                                                <span class="input-group-btn">
-                                                    <button onclick="tampilMember()" class="btn btn-member" type="button"><i
-                                                            class="fa fa-arrow-right"></i></button>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="diskon" class="col-lg-4 control-label">Diskon</label>
-                                        <div class="col-lg-8">
-                                            <input type="number" name="diskon" id="diskon" class="form-control"
-                                                value="{{ !empty($memberSelected->id_member) ? $diskon : 0 }}" readonly>
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -129,7 +106,6 @@
     </div>
 
     @includeIf('penjualan_detail.produk')
-    @includeIf('penjualan_detail.member')
 @endsection
 
 @push('css')
@@ -178,9 +154,6 @@
                         },
                         {
                             data: 'jumlah'
-                        },
-                        {
-                            data: 'diskon'
                         },
                         {
                             data: 'subtotal'
@@ -284,22 +257,6 @@
                 });
         }
 
-        function tampilMember() {
-            $('#modal-member').modal('show');
-        }
-
-        function pilihMember(id, kode) {
-            $('#id_member').val(id);
-            $('#kode_member').val(kode);
-            $('#diskon').val('{{ $diskon }}');
-            loadForm($('#diskon').val());
-            $('#diterima').val(0).focus().select();
-            hideMember();
-        }
-
-        function hideMember() {
-            $('#modal-member').modal('hide');
-        }
 
         function deleteData(url) {
             if (confirm('Yakin ingin menghapus data terpilih?')) {

@@ -29,7 +29,6 @@ class SettingController extends Controller
             $file = $request->file('path_logo');
             $nama = 'logo-' . date('YmdHis') . '.' . $file->getClientOriginalExtension();
             $file->move(public_path('/img'), $nama);
-
             $setting->path_logo = "/img/$nama";
         }
 

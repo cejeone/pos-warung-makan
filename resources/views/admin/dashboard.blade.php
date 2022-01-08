@@ -6,6 +6,15 @@
 
 @section('content')
     <div class="row">
+        <div class="col-6">
+            <div class="bg-menu">
+                <h4 class="text-center"><i
+                        class="fas fa-calendar-alt">&nbsp;&nbsp;</i>{{ tanggal_indonesia($tanggal_akhir, false) }}
+                </h4>
+            </div>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-lg-3">
             <div class="card db">
                 <div class="card-body">
@@ -28,18 +37,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-3">
-            <div class="card db">
-                <div class="card-body">
-                    <h1>{{ $member }}</h1>
-                    <p class="card-text">Total member</p>
-                </div>
-                <div class="card-footer card-ft">
-                    <a href="{{ route('member.index') }}" class="btn btn-db">Lihat</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-12">
+        {{-- <div class="col-lg-12">
             <div class="bg-menu mt-5">
                 <div class="pengaturan d-block">
                     <h5 class="box-title text-center">Grafik Pendapatan {{ tanggal_indonesia($tanggal_akhir, false) }}
@@ -55,7 +53,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 @endsection
 
